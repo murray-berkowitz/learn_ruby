@@ -25,3 +25,24 @@ def first_word(string)
     return result[0]
 end
 
+def titleize(word)
+    
+    if(word.include? ' ')
+        arr = word.split
+        arr2 = arr.each_with_index.map do |e, index|
+            if(index != 0 && (e == 'and' || e == "the" || e == "over" ))
+                e.downcase
+            else
+                e.capitalize
+            end
+        end
+        result = arr2 * ' '
+    else
+        result = word.capitalize
+    end
+    return result
+end
+
+
+
+
